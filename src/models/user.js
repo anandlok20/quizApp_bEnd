@@ -50,7 +50,6 @@ const uSchema = mongoose.Schema({
 })
 
 
-
 uSchema.pre('save', async function(next) {
     const userNew = this
 

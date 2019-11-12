@@ -6,7 +6,7 @@ const qrouter = require('./routers/quesRouter')
 
 const com = express()
 const portNo = process.env.portNo | 3000
-console.log("process", process.env.portNo);
+    // console.log("process", process.env.portNo);
 com.use(express.json())
 
 com.use(urouter)
