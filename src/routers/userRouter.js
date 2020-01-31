@@ -24,7 +24,7 @@ router.get('/user/me', interceptor, async(req, res) => {
 
 
 //update user
-router.patch('/update/me', interceptor, async(req, res) => {
+router.patch('/user/update', interceptor, async(req, res) => {
     const updates = Object.keys(req.body)
     const allowedUpdates = ['name', 'email', 'password', 'role', 'age']
     const validateUpdates = updates.every((updates) => allowedUpdates.includes(updates))
@@ -43,7 +43,7 @@ router.patch('/update/me', interceptor, async(req, res) => {
 })
 
 //delete user
-router.delete('/delete/me', interceptor, async(req, res) => {
+router.delete('/user/delete', interceptor, async(req, res) => {
     try {
         const user = await User.findByIdAndDelete(req.users.id)
         if (!user) {
